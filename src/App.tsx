@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
@@ -6,11 +6,13 @@ import ProductCategory from "./pages/ProductCategory";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const AppLayout = () => {
   return (
     <>
       <Outlet />
+      <Footer />
     </>
   );
 };
