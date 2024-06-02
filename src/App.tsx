@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import SingleProduct from "./pages/SingleProduct";
 
 const AppLayout = () => {
   return (
@@ -37,6 +38,7 @@ const App: FC = () => {
             path="/product-category/accessories"
             element={<ProductCategory />}
           />
+          <Route path="/product/:slug" element={<SingleProduct />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
