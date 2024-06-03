@@ -2,7 +2,7 @@ import { FC } from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/logo@2x-free-img.png";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
-import MobileHeader from "../components/MobileHeader";
+import MobileHeader from "./MobileHeader";
 
 const Header: FC = () => {
   return (

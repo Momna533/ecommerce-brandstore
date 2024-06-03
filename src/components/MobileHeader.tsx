@@ -1,13 +1,12 @@
-import { FC, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo@2x-free-img.png";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 import { FaHamburger } from "react-icons/fa";
 import { CgClose } from "react-icons/cg";
+import { useGlobalContext } from "../context/Context";
 
-const Header: FC = () => {
-  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
-
+const Header = () => {
+  const { mobileDrawerOpen, setMobileDrawerOpen } = useGlobalContext();
   return (
     <>
       <div className="mobile__header">
