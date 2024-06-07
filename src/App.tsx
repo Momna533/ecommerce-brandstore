@@ -8,6 +8,8 @@ import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SingleProduct from "./pages/SingleProduct";
+import Women from "./pages/Women";
+import Men from "./pages/Men";
 
 const AppLayout = () => {
   return (
@@ -32,8 +34,8 @@ const App: FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/" element={<RoutesLayout />}>
           <Route path="/store" element={<Store />} />
-          <Route path="/product-category/women" element={<ProductCategory />} />
-          <Route path="/product-category/men" element={<ProductCategory />} />
+          <Route path="/product-category/women" element={<Women />} />
+          <Route path="/product-category/men" element={<Men />} />
           <Route
             path="/product-category/accessories"
             element={<ProductCategory />}

@@ -39,7 +39,7 @@ h6 {
 p {
   margin-bottom: 1rem;
 }
-.divider {
+.heading__border {
   background-color: #0084d6;
   height: 2px;
   margin: 0 auto;
@@ -91,10 +91,8 @@ p {
   text-decoration: none;
   position: relative;
   transition: all 0.3s ease;
-  font-size: 1.15em;
-}
-.nav__links a {
-  font-weight: 700;
+  font-size: 0.85em;
+  text-transform: uppercase;
 }
 .nav__links a:hover,
 .nav__menu a:hover {
@@ -110,8 +108,7 @@ p {
   align-items: center;
   justify-content: center;
   gap: 0.75em;
-  font-size: 1.5em;
-  font-weight: 700;
+  font-size: 0.85em;
   background-color: transparent;
   border: none;
   color: #000000;
@@ -167,10 +164,10 @@ p {
   text-decoration: none;
   position: relative;
   transition: all 0.3s ease;
-  font-size: 1.15em;
+  font-size: 1em;
 }
 .home__nav__links a {
-  font-weight: 700;
+  font-weight: 500;
 }
 .home__nav__links a::after,
 .home__nav__menu a::after {
@@ -199,7 +196,7 @@ p {
   align-items: center;
   justify-content: center;
   gap: 0.75em;
-  font-size: 1.5em;
+  font-size: 1.05em;
   font-weight: 700;
   background-color: transparent;
   border: none;
@@ -240,9 +237,13 @@ p {
   border: none;
   color: #000000;
   cursor: pointer;
-  font-size: 1.5em;
+  font-size: 1.15em;
   background-color: transparent;
   transition: all 0.3s ease;
+}
+.mobile__header__nav__link .cart__amount,
+.mobile__header__nav__link svg {
+  font-size: 1.15em;
 }
 .mobile__header__primary__section .menu__btn:hover {
   color: #0075be;
@@ -305,7 +306,7 @@ p {
   color: #000000;
   transition: all 0.3s ease;
   text-decoration: none;
-  font-size: 1.25em;
+  font-size: 1em;
 }
 .mobile__drawer__links a:hover {
   color: #0075be;
@@ -649,6 +650,9 @@ p {
   }
 }
 @media (max-width: 500px) {
+  .featured__products h2 {
+    font-size: 1.75em;
+  }
   .featured__products__card {
     width: calc(50% - 0.5em);
   }
@@ -679,19 +683,19 @@ form.product__search {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25em;
+  gap: 0em;
 }
 .product__search input {
   border: 1px solid #dddddd;
-  padding: 0.75em 1em;
+  padding: 0.5em 0.75em;
   flex: 1;
-  font-size: 16px;
+  font-size: 14px;
 }
 .product__search button {
   border: 1px solid #0084d6;
   background-color: #0084d6;
   color: #fff;
-  padding: 1em;
+  padding: 0.55em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -765,7 +769,17 @@ main .breadcrumbs {
   color: #777;
   margin-bottom: 1em;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25em;
 }
+main .breadcrumbs a {
+  text-decoration: none;
+  color: #777;
+  font-size: 14px;
+}
+
 main .row {
   display: flex;
   justify-content: space-between;

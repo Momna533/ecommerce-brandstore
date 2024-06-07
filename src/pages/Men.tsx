@@ -4,7 +4,7 @@ import avatarImg from "../assets/sports-shoe3-300x300.jpg";
 import ProductCard from "../components/ProductCard";
 import Bredcrumbs from "../components/Bredcrumbs";
 
-const Store: FC = () => {
+const Men: FC = () => {
   return (
     <div className="container">
       <aside className="filters__container">
@@ -26,7 +26,7 @@ const Store: FC = () => {
               <span>(14)</span>
             </li>
             <li>
-              <span>Women</span>
+              <span>Men</span>
               <span>(17)</span>
             </li>
           </ul>
@@ -57,7 +57,7 @@ const Store: FC = () => {
         </div>
       </aside>
       <main>
-        <Bredcrumbs path="store" />
+        <Bredcrumbs path="men" />
         <div className="row">
           <p className="search__results">Showing 1-12 of 31 results</p>
           <form>
@@ -90,4 +90,4 @@ const Store: FC = () => {
   );
 };
 
-export default Store;
+export default Men;
