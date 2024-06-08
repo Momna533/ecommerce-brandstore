@@ -12,10 +12,13 @@ import Women from "./pages/Women";
 import Men from "./pages/Men";
 import CartDrawer from "./components/CartDrawer";
 import Cart from "./pages/Cart";
+import HomeHeader from "./components/HomeHeader";
+import NotFound from "./pages/NotFound";
 
 const AppLayout = () => {
   return (
     <>
+      <HomeHeader />
       <CartDrawer />
       <Outlet />
       <Footer />
@@ -35,6 +38,8 @@ const App: FC = () => {
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/" element={<RoutesLayout />}>
           <Route path="/store" element={<Store />} />
           <Route path="/cart" element={<Cart />} />
@@ -45,8 +50,7 @@ const App: FC = () => {
             element={<ProductCategory />}
           />
           <Route path="/product/:slug" element={<SingleProduct />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Route>
     </Routes>
