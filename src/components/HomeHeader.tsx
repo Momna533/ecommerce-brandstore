@@ -3,8 +3,11 @@ import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/logo1-free-img.png";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 import MobileHeader from "./MobileHeader";
+import { useGlobalContext } from "../context/Context";
 
 const HomeHeader: FC = () => {
+  const { cartDrawerOpen, setCartDrawerOpen } = useGlobalContext();
+
   return (
     <>
       <div className="home__header">
@@ -41,7 +44,10 @@ const HomeHeader: FC = () => {
                   Contact Us
                 </NavLink>
               </div>
-              <button className="nav__link home__cart__link">
+              <button
+                className="nav__link home__cart__link"
+                onClick={() => setCartDrawerOpen(true)}
+              >
                 <div className="cart__amount">$0.00</div>
                 <FaCartShopping />
               </button>

@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 import sportsShoe1 from "../assets/sports-shoe1-300x300.jpg";
 import bag1 from "../assets/product-bag1-300x300.jpg";
 import bag2 from "../assets/product-bag3-300x300.jpg";
@@ -107,14 +113,29 @@ const featuredData = data.filter((item) => item.featured === true);
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
   const [featuredProducts, setFeaturedProducts] = useState(featuredData);
   const [products, setProducts] = useState(data);
 
+  useEffect(() => {
+    const closeMobileDrawer = () => {
+      if (window.innerWidth > 1024) {
+        setMobileDrawerOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", closeMobileDrawer);
+    return () => {
+      window.removeEventListener("resize", closeMobileDrawer);
+    };
+  }, []);
   return (
     <AppContext.Provider
       value={{
         mobileDrawerOpen,
         setMobileDrawerOpen,
+        cartDrawerOpen,
+        setCartDrawerOpen,
         products,
         setProducts,
         featuredProducts,

@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo@2x-free-img.png";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
+import PrimaryBtn from "./PrimaryBtn";
 
 const Footer: FC = () => {
   return (
@@ -39,7 +40,7 @@ const Footer: FC = () => {
             <div className="primary__footer__column__heading">Subscribe</div>
             <form>
               <input type="email" placeholder="Enter your email" />
-              <button>Subscribe</button>
+              <PrimaryBtn title="Subscribe" />
             </form>
           </div>
         </div>

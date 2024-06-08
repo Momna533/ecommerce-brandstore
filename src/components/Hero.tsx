@@ -7,8 +7,8 @@ const Hero: FC = () => {
         <h1>Raining Offers For Hot Summer!</h1>
         <p>25% Off On All Products</p>
         <div className="cta__btns">
-          <button className="cta__button primary__btn">Shop Now</button>
-          <button className="cta__button secondary__btn">Fnd More</button>
+          <button className="primary__cta__btn primary__btn">Shop Now</button>
+          <button className="secondary__cta__btn primary__btn">Fnd More</button>
         </div>
       </div>
     </div>

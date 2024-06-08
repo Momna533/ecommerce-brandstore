@@ -10,10 +10,13 @@ import Footer from "./components/Footer";
 import SingleProduct from "./pages/SingleProduct";
 import Women from "./pages/Women";
 import Men from "./pages/Men";
+import CartDrawer from "./components/CartDrawer";
+import Cart from "./pages/Cart";
 
 const AppLayout = () => {
   return (
     <>
+      <CartDrawer />
       <Outlet />
       <Footer />
     </>
@@ -34,6 +37,7 @@ const App: FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/" element={<RoutesLayout />}>
           <Route path="/store" element={<Store />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/product-category/women" element={<Women />} />
           <Route path="/product-category/men" element={<Men />} />
           <Route
