@@ -1,44 +1,53 @@
 import { FaCartShopping } from "react-icons/fa6";
 import shirt from "../assets/sports-shoe1-300x300.jpg";
 import PrimaryBtn from "../components/PrimaryBtn";
+import { useGlobalContext } from "../context/Context";
+import { CgClose } from "react-icons/cg";
+
 const Cart = () => {
+  const { cart, removeFromCart } = useGlobalContext();
   return (
     <div className="cart">
       <div className="cart__content">
         <h1>Cart</h1>
-        <div className="cart__items">
-          <div className="cart__item__header"></div>
-          <div className="cart__item__heading">
+        {/* <div className="cart__item__header"></div> */}
+        {/* <div className="cart__item__heading">
             <button></button>
             <h4>Product</h4>
             <h4>price</h4>
             <h4>quantity</h4>
             <h4>subtotal</h4>
-          </div>
-          <div className="cart__item">
-            <button>
-              {" "}
-              <svg
-                stroke="currentColor"
-                fill="none"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </button>
-            <h4>Product</h4>
-            <p>price</p>
-            <p>quantity</p>
-            <p>subtotal</p>
-          </div>
-          {/* <div className="cart__item">
+          </div> */}
+        {cart.length > 0 ? (
+          cart.map((item) => {
+            const { id, title, img, price } = item;
+            return (
+              <div className="cart__item">
+                <button onClick={() => removeFromCart(id)}>
+                  <CgClose />
+                </button>
+                <div className="cart__item__img">
+                  <img src={img} alt={title} />
+                </div>
+                <h4>{title}</h4>
+                <p>{price}</p>
+                <p>amount</p>
+                <p>subtotal</p>
+              </div>
+            );
+          })
+        ) : (
+          <>
+            <h3>Cart is currently empty</h3>
+            <PrimaryBtn
+              varient="link"
+              to="/store"
+              title="continue shopping"
+            ></PrimaryBtn>
+          </>
+        )}
+
+        {/* <div className="cart__item">
             <div className="cart__item__image">
               <img src={shirt} alt="shirt" />
             </div>
@@ -55,7 +64,6 @@ const Cart = () => {
               </div>
             </div>
           </div> */}
-        </div>
         {/* <div className="cart__collatoral">
           <div className="cart__collatoral__content">
             <h4>Cart Totals</h4>

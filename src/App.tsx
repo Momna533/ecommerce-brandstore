@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
-import ProductCategory from "./pages/ProductCategory";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
@@ -14,6 +13,7 @@ import CartDrawer from "./components/CartDrawer";
 import Cart from "./pages/Cart";
 import HomeHeader from "./components/HomeHeader";
 import NotFound from "./pages/NotFound";
+import Accessories from "./pages/Accessories";
 
 const AppLayout = () => {
   return (
@@ -29,7 +29,9 @@ const RoutesLayout = () => {
   return (
     <>
       <Header />
+      <CartDrawer />
       <Outlet />
+      <Footer />
     </>
   );
 };
@@ -40,18 +42,15 @@ const App: FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/" element={<RoutesLayout />}>
-          <Route path="/store" element={<Store />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/product-category/women" element={<Women />} />
-          <Route path="/product-category/men" element={<Men />} />
-          <Route
-            path="/product-category/accessories"
-            element={<ProductCategory />}
-          />
-          <Route path="/product/:slug" element={<SingleProduct />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
+      </Route>
+      <Route path="/" element={<RoutesLayout />}>
+        <Route path="/store" element={<Store />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product-category/women" element={<Women />} />
+        <Route path="/product-category/men" element={<Men />} />
+        <Route path="/product-category/accessories" element={<Accessories />} />
+        <Route path="/product/:slug" element={<SingleProduct />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

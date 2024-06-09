@@ -6,7 +6,6 @@ import FeaturedProducts from "../components/FeaturedProducts";
 const Home: FC = () => {
   return (
     <>
-      <HomeHeader />
       <Hero />
       <div className="featured__products">
         <h2>Featured Products</h2>

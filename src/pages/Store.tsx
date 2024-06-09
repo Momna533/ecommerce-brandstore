@@ -3,8 +3,10 @@ import { FaArrowRight, FaChevronRight } from "react-icons/fa6";
 import avatarImg from "../assets/sports-shoe3-300x300.jpg";
 import ProductCard from "../components/ProductCard";
 import Bredcrumbs from "../components/Bredcrumbs";
+import { useGlobalContext } from "../context/Context";
 
 const Store: FC = () => {
+  const { products } = useGlobalContext();
   return (
     <div className="container">
       <aside className="filters__container">
@@ -69,13 +71,16 @@ const Store: FC = () => {
           </form>
         </div>
         <div className="products">
+          {products.map((product) => {
+            return <ProductCard key={product.id} {...product} />;
+          })}
+          {/* <ProductCard />
           <ProductCard />
           <ProductCard />
           <ProductCard />
           <ProductCard />
           <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          <ProductCard /> */}
         </div>
         <div className="pagination">
           <button>1</button>

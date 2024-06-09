@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { FaCartShopping } from "react-icons/fa6";
+import { useGlobalContext } from "../context/Context";
 
-const FeaturedProduct = ({ img, title, price, category }) => {
-  //   const image = img.map((img) => img);
-  console.log(img);
-
+const FeaturedProduct = ({ id, img, title, price, category }) => {
+  const { addToCart } = useGlobalContext();
   return (
     <div className="featured__products__card">
       <Link to={`/product/${title}`}>
@@ -21,7 +20,10 @@ const FeaturedProduct = ({ img, title, price, category }) => {
         <div className="variations"></div>
         <div className="rating"></div>
         <div className="featured__products__card__content__cart">
-          <button className="featured__products__card__content__cart__btn">
+          <button
+            className="featured__products__card__content__cart__btn"
+            onClick={() => addToCart(id)}
+          >
             <FaCartShopping />
           </button>
         </div>
